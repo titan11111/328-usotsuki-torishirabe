@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#07080c">
+<title>ウソつきを探せ！取調室</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="shell">
+  <header id="hud">
+    <span>FILE <b id="hud-case">--</b></span>
+    <span id="hud-life" aria-live="polite">♥♥♥</span>
+    <span>SCORE <b id="hud-score">000000</b></span>
+    <span id="rec" aria-hidden="true">REC</span>
+  </header>
+  <div id="stage">
+    <canvas id="view" width="160" height="112" data-logical-width="160" data-logical-height="112" aria-label="取調室"></canvas>
+  </div>
+  <section id="dossier" data-scrollable aria-live="polite"></section>
+  <div id="fcpad" role="group" aria-label="16ビットコントローラー">
+    <p id="hint"></p>
+    <div class="fc-shell">
+      <div class="fc-dpad" id="fc-dpad" role="group" aria-label="十字キー">
+        <div class="fc-cross"></div>
+        <button type="button" class="fc-d u" data-fc="up" aria-label="上"></button>
+        <button type="button" class="fc-d d" data-fc="down" aria-label="下"></button>
+        <button type="button" class="fc-d l" data-fc="left" aria-label="左"></button>
+        <button type="button" class="fc-d r" data-fc="right" aria-label="右"></button>
+      </div>
+      <div class="fc-mid">
+        <button type="button" class="fc-sys" data-fc="select" aria-label="セレクト、音のオンオフ">SELECT</button>
+        <button type="button" class="fc-sys" data-fc="start" aria-label="スタート、ポーズ">START</button>
+      </div>
+      <div class="fc-ab">
+        <button type="button" class="fc-ab-btn" data-fc="b" aria-label="Bボタン">B</button>
+        <button type="button" class="fc-ab-btn a" data-fc="a" aria-label="Aボタン">A</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="pause" role="dialog" aria-modal="true" aria-label="ポーズ">
+  <div class="box">
+    <h2>ポーズ</h2>
+    <dl>
+      <dt>十字キー</dt><dd>容疑者を選ぶ</dd>
+      <dt>A</dt><dd>決定</dd>
+      <dt>B</dt><dd>この画面を閉じる</dd>
+      <dt>START</dt><dd>ポーズ</dd>
+      <dt>SELECT</dt><dd>音 ON / OFF</dd>
+    </dl>
+    <button type="button" class="btn" id="pv-resume">ゲームにもどる</button>
+    <button type="button" class="btn sub" id="pv-title">タイトルへもどる</button>
+  </div>
+</div>
+<p id="err" role="status"></p>
+<script src="script.js"></script>
+</body>
+</html>
